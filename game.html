@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bismillah Sempro - Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+</head>
+<body class="game-page">
+    <div id="ui-container">
+        <div class="ui-panel">
+            <div class="ui-item">
+                <span class="ui-label">Tahap:</span>
+                <span id="levelDisplay" class="ui-value">1</span>
+            </div>
+            <div class="ui-item">
+                <span class="ui-label">Dokumen:</span>
+                <span id="collectedDisplay" class="ui-value">0/3</span>
+            </div>
+            <div class="ui-item">
+                <span class="ui-label">❤️</span>
+                <span id="livesDisplay" class="ui-value">3</span>
+            </div>
+        </div>
+        <button id="restartBtn" class="btn-small" onclick="restartLevel()">🔄 Ulang Tahap</button>
+    </div>
+
+    <div id="gameContainer"></div>
+
+    <div id="levelComplete" class="modal hidden">
+        <div class="modal-content">
+            <h2>✅ Tahap Selesai!</h2>
+            <div id="docPreview">
+                <img id="docImage" src="" alt="Document">
+                <p id="docCaption"></p>
+            </div>
+            <button class="btn" onclick="nextLevel()">Lanjut ke Tahap Berikutnya</button>
+        </div>
+    </div>
+
+    <div id="gameOver" class="modal hidden">
+        <div class="modal-content">
+            <h2>💔 Gagal</h2>
+            <p>Kesempatan habis! Tapi jangan menyerah...</p>
+            <button class="btn" onclick="restartFromBeginning()">Mulai dari Awal</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
